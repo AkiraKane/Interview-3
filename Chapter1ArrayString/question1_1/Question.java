@@ -1,7 +1,14 @@
+/**
+ * CTCI1.1: Implement an algorithm to determine if a string has all unique characters. 
+ * What if you cannot use additional data structures? 
+ * 
+ */
+
 package question1_1;
 
 public class Question {
-
+    // no additional storage solution
+    // use 
     public static boolean isUniqueChars(String str) {
         if (str.length() > 128) {
             return false;
@@ -15,6 +22,7 @@ public class Question {
         return true;
     }
     
+    // use char_set as additional 
     public static boolean isUniqueChars2(String str) {
         if (str.length() > 128) {
             return false;

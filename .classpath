@@ -12,5 +12,6 @@
 	<classpathentry kind="src" path="Chapter10ScalabilityMemoryLimits"/>
 	<classpathentry kind="src" path="Chapter11Others"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="CtCILibrary"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
