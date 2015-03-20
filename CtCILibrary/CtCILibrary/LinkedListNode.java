@@ -11,7 +11,7 @@ public class LinkedListNode {
 		setPrevious(p);
 	}
 	
-	public LinkedListNode() { }
+	public LinkedListNode() {}
 
 	public void setNext(LinkedListNode n) {
 		next = n;

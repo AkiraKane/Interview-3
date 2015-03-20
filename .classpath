@@ -4,8 +4,8 @@
 	<classpathentry kind="src" path="Chapter2LinkedList"/>
 	<classpathentry kind="src" path="Chapter3StacksQueues"/>
 	<classpathentry kind="src" path="Chapter4TreesGraphs"/>
-	<classpathentry kind="src" path="Chapter5RecursionDP"/>
-	<classpathentry kind="src" path="Chapter6SortingSearching"/>
+	<classpathentry kind="src" path="Chapter5SortingSearching"/>
+	<classpathentry kind="src" path="Chapter6RecursionDP"/>
 	<classpathentry kind="src" path="Chapter7BitManipulation"/>
 	<classpathentry kind="src" path="Chapter8Math"/>
 	<classpathentry kind="src" path="Chapter9OOD"/>

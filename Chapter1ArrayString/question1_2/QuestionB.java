@@ -1,35 +1,32 @@
+/**
+ * If The String is given as an array of characters. How to reverse this array.
+ * Return should be a string.
+ */
+
 package question1_2;
 
-public class QuestionB {    
-    public static boolean permutation(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
-        
-        int[] letters = new int[128];
-         
-        char[] s_array = s.toCharArray();
-        for (char c : s_array) { // count number of each char in s.
-            letters[c]++;  
-        }
-          
-        for (int i = 0; i < t.length(); i++) {
-            int c = (int) t.charAt(i);
-            if (--letters[c] < 0) {
-                return false;
-            }
-        }
-          
-        return true;
+public class QuestionB {
+    public static void swap(char[] chars, int index1, int index2){
+        char temp = chars[index1];
+        chars[index1]=chars[index2];
+        chars[index2]=temp;
     }
     
-    public static void main(String[] args) {
-        String[][] pairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "llloh"}};
-        for (String[] pair : pairs) {
-            String word1 = pair[0];
-            String word2 = pair[1];
-            boolean anagram = permutation(word1, word2);
-            System.out.println(word1 + ", " + word2 + ": " + anagram);
+    public static String reverse(char[] original){
+        int startIndex=0;
+        int endIndex=original.length-1;
+        while(startIndex<endIndex){
+            swap(original, startIndex, endIndex);
+            startIndex++;
+            endIndex--;
         }
+        
+        return new String(original);
     }
+
+    public static void main(String[] args) {
+        char[] chars= {'h','e','l','l','o'};
+        System.out.println( reverse(chars) );
+    }
+
 }
