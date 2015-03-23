@@ -8,9 +8,6 @@
 	<classpathentry kind="src" path="Chapter6RecursionDP"/>
 	<classpathentry kind="src" path="Chapter7BitManipulation"/>
 	<classpathentry kind="src" path="Chapter8Math"/>
-	<classpathentry kind="src" path="Chapter9OOD"/>
-	<classpathentry kind="src" path="Chapter10ScalabilityMemoryLimits"/>
-	<classpathentry kind="src" path="Chapter11Others"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="CtCILibrary"/>
 	<classpathentry kind="output" path="bin"/>

@@ -1,3 +1,8 @@
+/**
+ * 3.2  Implement queue
+ * (CareerCups150 -- P80)
+ */
+
 package question3_2;
 
 public class Question {
