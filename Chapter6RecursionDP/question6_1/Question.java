@@ -1,7 +1,5 @@
-/**
- * 6.1  Fibonacci Numbers (Iterative and Recursive)
- * (CareerCups150 -- P108)
- */
+
+
 package question6_1;
 
 public class Question {

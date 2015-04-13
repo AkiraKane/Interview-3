@@ -1,17 +1,26 @@
 /**
- * 1.21 Maximum Product Subarray
- * Find the contiguous subarray within an array of integers that has the largest product. For example, given the array [2,3,­2,4], the contiguous subarray [2,3] has the largest product = 6. (CleanCodeHandbook­­46)
+ *   1.21    isSubstring
+ *   Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubstring (i e , “waterbottle” is a rotation of “erbottlewat”)
+ *   (CareerCups150--1.8)
  */
+
 package question1_21;
 
 public class Question {
-
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+    public static boolean isRotation(String s1, String s2){
+       
+        
+        
+        return false;
     }
-
+    
+    public static void main(String[] args) {
+        String[][] pairs = {{"apple", "pleap"}, {"waterbottle", "erbottlewat"}, {"camera", "macera"}};
+        for (String[] pair : pairs) {
+            String word1 = pair[0];
+            String word2 = pair[1];
+            boolean is_rotation = isRotation(word1, word2);
+            System.out.println(word1 + ", " + word2 + ": " + is_rotation);
+        }
+    }
 }

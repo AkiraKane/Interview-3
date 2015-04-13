@@ -1,7 +1,5 @@
-/**
- * 8.5  Given two squares on a two-dimensional plane, find a line that would cut these two squares in half. Assume that the top and bottom sides of the square run parallel to the x-axis.
- * (CareerCups150 -- 7.5)
- */
+
+
 package question8_5;
 
 public class Question {

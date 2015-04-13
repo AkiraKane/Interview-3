@@ -1,6 +1,4 @@
-/**
- * 5.1 Some common sorting algorithms
- */
+
 package question5_1;
 
 public class Question {

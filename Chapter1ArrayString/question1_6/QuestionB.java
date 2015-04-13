@@ -3,7 +3,7 @@
  * Return should be a string.
  */
 
-package question1_2;
+package question1_6;
 
 public class QuestionB {
     public static void swap(char[] chars, int index1, int index2){

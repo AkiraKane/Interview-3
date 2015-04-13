@@ -1,7 +1,5 @@
-/**
- * 7.13 Write a function that adds two numbers. You should not use + or any arithmetic operators 
- * (CareerCups150 -- 18.1)
- */
+
+
 package question7_13;
 
 public class Question {

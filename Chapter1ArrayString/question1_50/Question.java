@@ -1,11 +1,11 @@
 /**
  * 1.5  Implement a method to perform basic string compressing using the counts of repeated characters. 
  * For example, the string aabcccccaaa would become a2b1c5a3. 
- * If the “compressed” string would not become smaller than the original string, you method should return the original string.
+ * If the ???compressed??? string would not become smaller than the original string, you method should return the original string.
  * (CareerCups150--1.5)
  */
 
-package question1_5;
+package question1_50;
 
 public class Question {
     public static String compression(String str){
