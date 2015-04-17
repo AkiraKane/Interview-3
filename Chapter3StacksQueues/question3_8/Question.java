@@ -1,4 +1,7 @@
-
+/**
+    3.8     Implement a MyQueue class which implements a queue using two stacks.
+    (CareerCups150 - 3.5)
+ */
 
 package question3_8;
 

@@ -8,9 +8,8 @@
 package question1_1;
 
 public class Question {
-    // no additional storage solution
-    // use 
-    public static boolean isUniqueChars(String str) {
+    // no additional data storage solution
+    public static boolean isUniqueChars1(String str) {
         if (str.length() > 128) {
             return false;
         }
@@ -23,7 +22,7 @@ public class Question {
         return true;
     }
     
-    // use char_set as additional 
+    // use char_set as additional data store
     public static boolean isUniqueChars2(String str) {
         if(str.length()>128){
             return false;
@@ -41,7 +40,7 @@ public class Question {
         System.out.println((int)'a');
         String[] words = {"abcde", "hello", "apple", "kite", "padle"};
         for (String word : words) {
-            System.out.println(word + ": " + isUniqueChars(word) + " " + isUniqueChars2(word));
+            System.out.println(word + ": " + isUniqueChars1(word) + " " + isUniqueChars2(word));
         }
     }
 }

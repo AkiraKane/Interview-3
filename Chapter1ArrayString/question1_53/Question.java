@@ -1,5 +1,8 @@
+/**
+    1.53    Design a method to find the frequency of occurrences of any given word in a book. (CareerCups150--17.9)
+ */
 
-package question7_1;
+package question1_53;
 
 public class Question {
 
