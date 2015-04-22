@@ -1,7 +1,8 @@
 /**
     6.1     Subsets
     Get all subsets of a set.
-    (CareerCups150 -- 9.4)                      
+    (CareerCups150 -- 9.4)
+    
     Given a set of distinct integers, S, return all possible subsets.
     Note:
     Elements in a subset must be in non-descending order.
@@ -26,13 +27,38 @@
 
 package question6_1;
 
-public class Question {
+import java.util.ArrayList;
 
+public class Question {
+    
+    public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set, int index){
+        ArrayList<ArrayList<Integer>> allSubsets;
+        //
+        if(index<0){
+            allSubsets = new ArrayList<ArrayList<Integer>>();
+            allSubsets.add(new ArrayList<Integer>());
+        } else {
+            allSubsets = getSubsets(set, index-1);
+            int item = set.get(index);
+            ArrayList<ArrayList<Integer>> moresubnets = new ArrayList<ArrayList<Integer>>();
+            for(ArrayList<Integer> subnet : allSubsets) {
+                ArrayList<Integer> newsubnet = new ArrayList<Integer>();
+                newsubnet.addAll(subnet);
+                newsubnet.add(item);
+                moresubnets.add(newsubnet);
+            }
+            allSubsets.addAll(moresubnets);
+        }
+        return allSubsets;
+    }
     
     public static void main(String[] args) {
-
-        
-        
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i = 0; i < 3; i++) {
+            list.add(i);
+        }
+        ArrayList<ArrayList<Integer>> subsets = getSubsets(list, list.size()-1);
+        System.out.println(subsets.toString());
     }
 
 }

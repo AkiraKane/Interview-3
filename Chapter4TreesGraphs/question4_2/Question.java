@@ -55,15 +55,32 @@ public class Question {
     }
     
     
-    /**
-     * @param args
-     */
+    public static void travelPreOrder(TreeNode node){
+        System.out.print(node.data + " ");
+        if(node.left!=null){
+            travelInOrder(node.left);
+        }
+        if(node.right!=null){
+            travelInOrder(node.right);
+        }
+    }
+    
+    public static void travelPostOrder(TreeNode node) {
+        if(node.left!=null){
+            travelInOrder(node.left);
+        }
+        if(node.right!=null){
+            travelInOrder(node.right);
+        }
+        System.out.print(node.data + " ");
+    }
+    
+    
     public static void main(String[] args) {
         int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         TreeNode root = AssortedMethods.createTreeFromArray(nodes_flattened);
         
         travelInOrder(root);
-        
     }
 
 }

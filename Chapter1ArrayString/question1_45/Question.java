@@ -10,12 +10,35 @@ package question1_45;
 
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+    public static int[] multiply(int[] array){
+        int[] result = new int[array.length];
+        int[] left = new int[array.length];
+        int[] right = new int[array.length];
+        
+        left[0] = array[0];
+        for(int i=1;i<array.length; i++){
+           left[i] = left[i-1]*array[i];
+        }
+        right[array.length-1] = array[array.length-1];
+        for(int i=array.length-2; i>=0; i--){
+            right[i]=right[i+1]*array[i];
+        }
+        
+        result[0] = right[1];
+        result[array.length-1] = left[array.length-2]; 
+        for(int i=1; i<=array.length-2; i++){
+            result[i] = left[i-1]*right[i+1];
+        }
+        
+        return result;
     }
-
+    
+    
+    public static void main(String[] args) {
+        int[] array = {4, 3, 2, 1, 2};
+        int[] result = multiply(array);
+        for(int i=0; i<result.length; i++){
+            System.out.print(result[i]+" ");
+        }
+    }
 }

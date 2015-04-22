@@ -17,14 +17,67 @@
 
 package question1_18;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+    public static ArrayList<ArrayList<Integer>> threeSum(int[] array, int sum) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        
+        // sort the array
+        Arrays.sort(array);
+        
+        for(int i=0; i< array.length-2; i++){
+            ArrayList<ArrayList<Integer>> twoSumPair = twoSum(array, i+1, sum-array[i]);
+            if(twoSumPair.size()!=0){
+                for(ArrayList<Integer> pair : twoSumPair){
+                    ArrayList<Integer> threeSumPair = new ArrayList<Integer>();
+                    threeSumPair.add(array[1]);
+                    threeSumPair.addAll(pair);
+                    result.add(threeSumPair);
+                }
+            }
+        }
+        return result;
     }
-
+    
+    public static ArrayList<ArrayList<Integer>> twoSum(int[] array, int left, int sum){
+        if(left>=array.length-1)
+            return null;
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        int right = array.length-1;
+        while(left<right){
+            int s = array[left]+array[right];
+            if(s==sum){
+                ArrayList<Integer> pair = new ArrayList<Integer>();
+                pair.add(left);
+                pair.add(right);
+                result.add(pair);
+                left--;
+                right++;
+            } else if(s<sum) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        int[] S = {-1, 0, 1, 2, -1, -4};
+        ArrayList<ArrayList<Integer>> result = threeSum(S, 0);
+        
+        // print out the result
+        if(result!=null){
+            for(ArrayList<Integer> pair : result){
+                String entry = "(";
+                for(Integer element : pair){
+                    entry = entry + element + " ";
+                }
+                entry += ")";
+            }
+        }
+    }
 }

@@ -18,12 +18,35 @@ package question1_31;
 
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static int largestSum(int[] array){
+        int largestSum=0;
+        int sum=0;
+        for(int i=0; i<array.length; i++){
+            sum+=array[i];
+            if(sum<0){
+                sum=0;
+            } else{
+                if(sum>largestSum){
+                    largestSum=sum;
+                }
+            }
+        }
+        return largestSum;
+    }
+    
+    
+    public static int largestSum1(int[] array){
+        
+        
+        
+        return 0;
+    }
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        int[] array = {2,-8,3,-2,4,-10};
+        System.out.println(largestSum(array));
+        
+        
     }
 
 }

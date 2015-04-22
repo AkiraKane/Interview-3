@@ -12,30 +12,60 @@
     (leetcode54)
     (leetcodecpp15.10)
     http://www.leetcode.com/2010/05/printing-matrix-in-spiral-order.html
-     
-    Given an integer n, generate a square matrix filled with elements from 1 to n in spiral order.
-    For example,
-    Given n = 3,
-    You should return the following matrix:
-    [
-     [ 1, 2, 3 ],
-     [ 8, 9, 4 ], 
-     [ 7, 6, 5 ]
-    ]
-    (leetcode59)
-    (leetcodecpp15.11)
  */
 
 package question1_48;
 
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+    public static int[] printMatrix(int[][] matrix, int M, int N){
+        int[] result = new int[M*N];
+        int minLength = (M<N) ? M : N;
+        int count=0;
+        for(int delta=0; delta<=(minLength-1)/2; delta++){
+            if(delta==(minLength-1-delta)){
+                if(minLength==M){
+                    // single row
+                    for(int i=delta; i<N-delta; i++){
+                        result[count++]=matrix[delta][i];
+                    }
+                } else {
+                    // single column
+                    for(int i=delta; i<M-delta;i++){
+                        result[count++]=matrix[i][delta];
+                    }
+                }
+                break;
+            }
+            
+            // left->right
+            for(int i=delta; i<N-1-delta; i++){
+                result[count++] = matrix[delta][i];
+            }
+            // top->bottom
+            for(int i=delta; i<M-1-delta; i++){
+                result[count++] = matrix[i][N-1-delta];
+            }
+            
+            // right->left
+            for(int i=N-1-delta; i>delta; i--){
+                result[count++] = matrix[M-1-delta][i];
+            }
+            
+            // bottom->top
+            for(int i=M-1-delta; i>0; i--){
+                result[count++] = matrix[i][delta];
+            }
+        }
+        return result;
     }
-
+    
+    
+    public static void main(String[] args) {
+        int[][] matrix = {{1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12}};
+        int[] result = printMatrix(matrix, 3, 4);
+        for(int i=0; i<result.length; i++){
+            System.out.print(result[i]+" ");
+        }
+    }
 }

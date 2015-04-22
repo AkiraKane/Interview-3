@@ -48,7 +48,8 @@ import CtCILibrary.TreeNode;
 
 public class Question {
     
-    public static ArrayList<LinkedList<TreeNode>> createLevelLinkedList(TreeNode root){
+    // top->down traversal
+    public static ArrayList<LinkedList<TreeNode>> topToBottomTraversal(TreeNode root){
         ArrayList<LinkedList<TreeNode>> result = new ArrayList<LinkedList<TreeNode>>();
         
         // root
@@ -73,9 +74,90 @@ public class Question {
         return result;
     }
     
+    // down->top traversal
+    public static ArrayList<LinkedList<TreeNode>> bottomToTopTraversal(TreeNode root) {
+        ArrayList<LinkedList<TreeNode>> result = new ArrayList<LinkedList<TreeNode>>();
+        
+        // root
+        LinkedList<TreeNode> current = new LinkedList<TreeNode>();
+        if(root!=null){
+            current.add(root);
+        }
+        
+        while(current.size()>0){
+            result.add(0, current); // add previous level
+            LinkedList<TreeNode> parents = current;
+            current = new LinkedList<TreeNode>();
+            for(TreeNode parent : parents){
+                if(parent.left!=null){
+                    current.add(parent.left);
+                }
+                if(parent.right!=null){
+                    current.add(parent.right);
+                }
+            }
+        }
+        return result;
+    }
+    
+    // zig-zag traversal
+    public static ArrayList<ArrayList<TreeNode>> zigzagTraversal(TreeNode root) {
+        ArrayList<ArrayList<TreeNode>> result = new ArrayList<ArrayList<TreeNode>>();
+        
+        // root
+        ArrayList<TreeNode> current = new ArrayList<TreeNode>();
+        if(root!=null){
+            current.add(root);
+        }
+        
+        int level = 0;
+        while(current.size()>0){
+            result.add(current); // add previous level
+            ArrayList<TreeNode> parents = current;
+            current = new ArrayList<TreeNode>();
+            if(level%2==0){
+                for(int i=parents.size()-1; i>=0; i--){
+                    TreeNode parent = parents.get(i);
+                    if(parent.right!=null){
+                        current.add(parent.right);
+                    }
+                    if(parent.left!=null){
+                        current.add(parent.left);
+                    }
+                }
+            } else {
+                for(int i=parents.size()-1; i>=0; i--){
+                    TreeNode parent = parents.get(i);
+                    if(parent.left!=null){
+                        current.add(parent.left);
+                    }
+                    if(parent.right!=null){
+                        current.add(parent.right);
+                    }
+                }
+            }
+            level++;
+        }
+        return result;
+    }
+   
+
     public static void printResult(ArrayList<LinkedList<TreeNode>> result){
         int depth = 0;
         for(LinkedList<TreeNode> entry : result){
+            Iterator<TreeNode> i = entry.listIterator();
+            System.out.print("Linked list at depth " + depth + ":");
+            while(i.hasNext()){
+                System.out.print(" "+ ((TreeNode)i.next()).data);
+            }
+            System.out.println();
+            depth++;
+        }
+    }
+    
+    public static void printResult2(ArrayList<ArrayList<TreeNode>> result){
+        int depth = 0;
+        for(ArrayList<TreeNode> entry : result){
             Iterator<TreeNode> i = entry.listIterator();
             System.out.print("Linked list at depth " + depth + ":");
             while(i.hasNext()){
@@ -90,8 +172,18 @@ public class Question {
     public static void main(String[] args) {
         int[] nodes_flattened = {1,2,3,4,5,6,7,8,9,10};
         TreeNode root = AssortedMethods.createTreeFromArray(nodes_flattened);
-        ArrayList<LinkedList<TreeNode>> list = createLevelLinkedList(root);
-        printResult(list);
+        
+        ArrayList<LinkedList<TreeNode>> list1 = topToBottomTraversal(root);
+        printResult(list1);
+        
+        System.out.println();
+        
+        ArrayList<LinkedList<TreeNode>> list2 = bottomToTopTraversal(root);
+        printResult(list2);
+        
+        System.out.println();
+        
+        ArrayList<ArrayList<TreeNode>> list3 = zigzagTraversal(root);
+        printResult2(list3);
     }
-
 }
