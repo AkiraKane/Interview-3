@@ -1,5 +1,5 @@
 /**
-    2.4 Partition List      
+    2.4 Partition List
     Write code to partition a linked list around a value x, such as that all nodes less than x, such that all nodes less than x come before all nodes greater than or equal to x.
     (CareerCups150 -- 2.4)
     
@@ -17,10 +17,28 @@
 
 package question2_4;
 
+import CtCILibrary.LinkedListNode;
+
 public class Question {
 
+    public static LinkedListNode partition(LinkedListNode node, int x){
+        
+        
+        return null;
+    }
+    
+    
     public static void main(String[] args) {
-
+        int[] vals = {1,3,7,5,2,9,4};
+        LinkedListNode head = new LinkedListNode(vals[0], null, null);
+        LinkedListNode current = head;
+        for(int i=1; i<vals.length; i++){
+            current = new LinkedListNode(vals[i], null, current);
+        }
+        System.out.println(head.printForward());
+        
+        LinkedListNode h = partition(head, 5);
+        System.out.println(h.printForward());
     }
 
 }

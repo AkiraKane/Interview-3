@@ -1,7 +1,10 @@
 /**
- * 2.2  Implement an algorithm to find the kth to last element of a single linked list. 
- * (CareerCups150 - 2.2)
- * 
+    2.2 Remove element in Linked List
+    Implement an algorithm to delete a node in the middle of a single linked list, given only access to that node 
+    EXAMPLE
+    Input: the node ‘c’ from the linked list a->b->c->d->e
+    Result: nothing is returned, but the new linked list looks like a->b->d->e
+    (CareerCups150 - 2.3)
  */
 
 package question2_2;
@@ -11,34 +14,20 @@ import CtCILibrary.LinkedListNode;
 
 public class Question {
     
-    public static LinkedListNode nthToLast(LinkedListNode head, int n){
-        if(head==null) return null;
-        LinkedListNode runner = head;
-        for(int i=0; i<n;i++){
-            runner=runner.next;
-            if(runner==null){
-                return null;
-            }
+    public static boolean deleteNode(LinkedListNode n) {
+        if(n==null || n.next==null){
+            return false;
         }
-        LinkedListNode current = head;
-        while(runner.next!=null){
-            current=current.next;
-            runner=runner.next;
-        }
-        return current;
+        LinkedListNode next = n.next;
+        n.data = next.data;
+        n.next = next.next;
+        return true;
     }
-    
+
     public static void main(String[] args) {
         LinkedListNode head = AssortedMethods.randomLinkedList(10, 0, 10);
         System.out.println(head.printForward());
-        int nth = 3;
-        LinkedListNode n = nthToLast(head, nth);
-        if(n==null){
-            System.out.println("Null...n is out of bounds.");
-        }else{
-            System.out.println(nth+"th to last node is "+n.data);
-        }
-        
+        deleteNode(head.next.next.next.next); // delete node 4
+        System.out.println(head.printForward());
     }
-
 }

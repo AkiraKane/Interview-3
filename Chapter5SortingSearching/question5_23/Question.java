@@ -1,6 +1,7 @@
 /**
-    5.23    Write a method to sort an array of strings so that all the anagrams are next to each other.
-    (CareerCups150 -- 11.2)
+    5.23    External Sort (Memory Limitation)
+    Imagine you have a 20GB file with one string per line. Explain how you would sort the file.
+    (CareerCups150 -- 11.4)
  */
 
 package question5_23;

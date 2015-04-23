@@ -17,11 +17,29 @@
 
 package question8_36;
 
-public class Question {
+import java.util.ArrayList;
 
+public class Question {
+    
+    public static ArrayList<Integer> grayCode(int n) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        if(n==1){
+            result.add(0);
+            result.add(1);
+            return result;
+        }
+        ArrayList<Integer> lastNums = grayCode(n-1);
+        result.addAll(lastNums);
+        for(Integer num : lastNums){
+            result.add(num|(1<<(n-1)));
+        }
+        return result;
+    }
     
     public static void main(String[] args) {
-        
+        ArrayList<Integer> result = grayCode(4);
+        for(Integer num : result){
+            System.out.print(num+" ");
+        }
     }
-
 }

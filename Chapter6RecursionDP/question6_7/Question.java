@@ -10,17 +10,21 @@
     Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space respectively.
     For example,
     There exist two distinct solutions to the 4-queens puzzle:
-    
-    
+    [
+      [''.Q..'',
+       ''...Q'',
+       ''Q...'',
+       ''..Q.''],
+      [''..Q.'',
+       ''Q...'',
+       ''...Q'',
+       ''.Q..'']
+    ]
     (leetcode51)
     (leetcodecpp10.4)
-     
+    
     Follow up for N-Queens problem.
     Now, instead outputting board configurations, return the total number of distinct solutions.
-    
-    
-    (leetcode52)
-    (leetcodecpp10.5)
  */
 
 package question6_7;

@@ -1,0 +1,19 @@
+/**
+    3.12    Longest Valid Parentheses
+    Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
+    For "(()", the longest valid parentheses substring is "()", which has length = 2.
+    Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.
+    (leetcode32)
+    (leetcodecpp4.1.2)
+ */
+package question3_12;
+
+public class Question {
+
+    public static void main(String[] args) {
+
+        
+        
+    }
+
+}

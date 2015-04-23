@@ -1,5 +1,11 @@
-
-
+/**
+    3.11    Valid Parentheses
+    Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+    The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+    (CleanCodeHandbook--41)
+    (leetcode20)
+    (leetcodecpp4.1.1)
+ */
 package question3_11;
 
 public class Question {
