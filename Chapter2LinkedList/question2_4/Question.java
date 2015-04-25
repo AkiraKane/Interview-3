@@ -22,14 +22,44 @@ import CtCILibrary.LinkedListNode;
 public class Question {
 
     public static LinkedListNode partition(LinkedListNode node, int x){
+        LinkedListNode beforeStart = null;
+        LinkedListNode beforeEnd = null;
+        LinkedListNode afterStart = null;
+        LinkedListNode afterEnd = null;
         
+        while(node!=null){
+            if(node.data<x){
+                if(beforeStart==null){
+                    beforeStart = node;
+                    beforeEnd = node;
+                } else {
+                    beforeEnd.next = node;
+                    beforeEnd = node;
+                }
+            } else {
+                if(afterStart==null){
+                    afterStart = node;
+                    afterEnd = node;
+                } else {
+                    afterEnd.next = node;
+                    afterEnd = node;
+                }
+            }
+            node = node.next;
+        }
         
-        return null;
+        // merge two queues
+        if(beforeStart==null){
+            return afterStart;
+        }
+        beforeEnd.next = afterStart;
+        afterEnd.next=null;
+        return beforeStart;
     }
     
     
     public static void main(String[] args) {
-        int[] vals = {1,3,7,5,2,9,4};
+        int[] vals = {1, 3, 7, 5, 2, 9, 4};
         LinkedListNode head = new LinkedListNode(vals[0], null, null);
         LinkedListNode current = head;
         for(int i=1; i<vals.length; i++){
@@ -38,7 +68,10 @@ public class Question {
         System.out.println(head.printForward());
         
         LinkedListNode h = partition(head, 5);
-        System.out.println(h.printForward());
+        while(h!=null){
+            System.out.print(h.data+" ");
+            h=h.next;
+        }
     }
 
 }

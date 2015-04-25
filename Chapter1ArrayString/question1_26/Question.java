@@ -1,4 +1,8 @@
-
+/**
+    1.26    Find Longest Common Substring
+    http://en.wikipedia.org/wiki/Longest_common_substring_problem
+    Dynamic Programming
+ */
 
 package question1_26;
 
