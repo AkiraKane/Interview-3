@@ -14,10 +14,63 @@
 
 package question2_12;
 
+import CtCILibrary.LinkedListNode;
+
 public class Question {
 
+    public static LinkedListNode reverseLL(LinkedListNode head, int m, int n){
+        // find the node just before m
+        LinkedListNode nodeBeforeM;
+        LinkedListNode nodeM;
+        if(m<=1){
+            nodeBeforeM=null;
+            nodeM=head;
+        } else {
+            nodeBeforeM=head;
+            for(int i=1; i<m-1; i++){
+                nodeBeforeM=nodeBeforeM.next;
+                if(nodeBeforeM==null){
+                    return null;
+                }
+            }
+            nodeM=nodeBeforeM.next;
+        }
+        
+        // find the node just after n
+        LinkedListNode nodeAfterN = head;
+        LinkedListNode nodeN = head;
+        for(int i=1; i<n; i++) {
+            nodeN=nodeN.next;
+            if(nodeN==null) {
+                return null;
+            }
+        }
+        nodeAfterN=nodeN.next;
+        
+        // now reverse nodes from m to n
+        LinkedListNode first = null;
+        LinkedListNode second = nodeM;
+        LinkedListNode third = nodeM.next;
+        for(int i=0;i<=(n-m);i++){
+            second.next=first;
+            first=second;
+            second=third;
+            third=third.next;
+        }
+        if(nodeBeforeM!=null){
+            nodeBeforeM.next=nodeN;
+        }
+        nodeM.next=nodeAfterN;
+        
+        return head;
+    }
+    
+    
     public static void main(String[] args) {
-
+        
+        
+        
+        
     }
 
 }

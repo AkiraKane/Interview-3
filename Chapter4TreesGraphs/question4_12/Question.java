@@ -1,5 +1,5 @@
 /**
-    4.12    Find the n-th smallest element in a binary search tree (BST).   
+    4.12    Find the nth smallest element in a binary search tree (BST).   
     if the size of the tree is unknown.
     if the size of the tree is known.
     

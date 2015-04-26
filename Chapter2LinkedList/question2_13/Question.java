@@ -10,11 +10,32 @@
 
 package question2_13;
 
+import CtCILibrary.LinkedListNode;
+
 public class Question {
 
-
+    // the question is similar to find the Kth node from the last one
+    public static LinkedListNode rotateList(LinkedListNode head, int k){
+        LinkedListNode slow = head;
+        LinkedListNode fast = head;
+        for(int i=0; i<k; i++){
+            fast=fast.next;
+        }
+        
+        while(fast.next!=null){
+            fast=fast.next;
+            slow=slow.next;
+        }
+        LinkedListNode newHead = slow.next;
+        fast.next=head;
+        slow.next=null;
+        
+        return newHead;
+    }
+    
+    
     public static void main(String[] args) {
-
+        
     }
 
 }

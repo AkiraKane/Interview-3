@@ -1,6 +1,10 @@
-
-
-package question8_20;
+/**
+    8.25    Power(x,n)
+    Implement pow(x, n).
+    (leetcode50)
+    (leetcodecpp11.1)
+ */
+package question8_25;
 
 public class Question {
 
