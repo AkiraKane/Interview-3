@@ -10,12 +10,32 @@
 package question1_58;
 
 public class Question {
-
-    /**
-     * @param args
-     */
+    
+    class Result {
+        public int hits;
+        public int pseudoHits;
+        
+        public Result(int h, int p){
+            hits = h;
+            pseudoHits = p;
+        }
+        
+        public Result() {}
+        
+        public String toString() {
+            return "("+hits+","+pseudoHits+")";
+        }
+        
+    };
+    
+    public static Result estimate(String guess, String solution){
+        
+        
+        
+        return null;
+    }
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

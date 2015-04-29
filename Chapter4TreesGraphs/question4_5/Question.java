@@ -8,14 +8,27 @@
  */
 package question4_5;
 
+import CtCILibrary.TreeNode;
+
 public class Question {
 
-    /**
-     * @param args
-     */
+    public boolean isBalanced(TreeNode root){
+        if(root==null){
+            return true;
+        }
+        return Math.abs(maxDepth(root.left)-maxDepth(root.right))<=1 && isBalanced(root.left) && isBalanced(root.right);
+    }
+    
+    public int maxDepth(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        return Math.max(maxDepth(root.left), maxDepth(root.right))+1;
+    }
+    
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        
     }
 
 }

@@ -13,12 +13,16 @@
 package question1_61;
 
 public class Question {
-
-    /**
-     * @param args
-     */
+    
+    public static int canCompleteCircuit(int[] gas, int[] cost){
+        
+        
+        
+        return -1;
+    }
+    
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

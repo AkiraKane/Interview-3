@@ -10,13 +10,19 @@
  */
 package question2_14;
 
+import CtCILibrary.LinkedListNode;
+
 public class Question {
 
-    /**
-     * @param args
-     */
+    
+    public static LinkedListNode reorder(LinkedListNode head){
+        
+        
+        
+        return null;
+    }
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

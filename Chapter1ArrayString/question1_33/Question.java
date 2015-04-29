@@ -9,12 +9,15 @@ package question1_33;
 
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static boolean subArraySumK(int[] array, int k){
+        
+        
+        
+        return false;
+    }
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        
     }
 
 }

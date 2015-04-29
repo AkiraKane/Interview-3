@@ -10,12 +10,25 @@ package question2_18;
 
 public class Question {
 
-    /**
-     * @param args
-     */
+    class RandomListNode {
+        public RandomListNode next;
+        public RandomListNode random;
+        
+        public RandomListNode() {
+        }
+    }
+    
+    public static RandomListNode copyRandomList(RandomListNode head){
+        
+        
+        
+        
+        return null;
+    }
+    
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        
     }
 
 }

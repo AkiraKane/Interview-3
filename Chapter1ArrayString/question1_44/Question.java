@@ -4,12 +4,14 @@
 package question1_44;
 
 public class Question {
+    
+    public static boolean isSubsequence(String a, String b){
+        
+        
+        return false;
+    }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

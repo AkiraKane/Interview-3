@@ -17,8 +17,18 @@
  */
 package question1_16;
 
+import java.util.List;
+
 public class Question {
 
+    public List<List<String>> palindromePartition(String input){
+        
+        
+        
+        return null;
+    }
+    
+    
     public static void main(String[] args) {
 
     }

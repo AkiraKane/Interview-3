@@ -6,13 +6,26 @@
  */
 package question2_16;
 
+import CtCILibrary.LinkedListNode;
+
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static LinkedListNode mergeSort(LinkedListNode head){
+        
+        
+        
+        return null;
+    }
+    
+    public static LinkedListNode merge(LinkedListNode head1, LinkedListNode head2){
+        
+        
+        
+        return null;
+    }
+    
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

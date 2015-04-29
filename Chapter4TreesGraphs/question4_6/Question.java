@@ -8,13 +8,19 @@
  */
 package question4_6;
 
+import CtCILibrary.TreeNode;
+
 public class Question {
 
-    /**
-     * @param args
-     */
+    public int maxDepth(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        return Math.max(maxDepth(root.left), maxDepth(root.right))+1;
+    }
+    
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

@@ -12,14 +12,24 @@
  */
 package question4_9;
 
+import CtCILibrary.TreeNode;
+
 public class Question {
+    
+    public static boolean isSymmetric(TreeNode node1, TreeNode node2){
+        if(node1==null && node2==null){
+            return true;
+        } else if((node1==null && node2!=null) || (node1!=null && node2==null)){
+            return false;
+        }
+        if(node1==node2){
+            return isSymmetric(node1.left, node1.right);
+        }
+        return (node1.data==node2.data) && isSymmetric(node1.left, node2.right) && isSymmetric(node1.right, node2.left);
+    }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        
     }
 
 }

@@ -5,6 +5,7 @@
     Input: find 5 in {15,16,19,20,25,1,3,4,5,7,10,14}
     Output: 8 (the index of 5 in the array)
     (CareerCups150 -- 11.3)
+    
     Suppose a sorted array is rotated at some pivot unknown to you beforehand.
     (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
     You are given a target value to search. If found in the array return its index, otherwise return -1.
@@ -24,8 +25,42 @@ package question5_3;
 
 public class Question {
 
+    public static int search(int arr[], int left, int right, int target){
+        if(left>right){
+            return -1;
+        }
+        while(left<=right){
+            int mid = (left+right)/2;
+            if(arr[mid]==target){
+                return mid;
+            }
+            if(arr[mid]<arr[right]){
+                if(arr[mid]<target && target<=arr[right]){
+                    left = mid+1;
+                } else {
+                    right = mid-1;
+                }
+            } else if(arr[mid]>arr[right]){
+                if(arr[left]<=target && target<arr[mid]){
+                    right = mid-1;
+                } else {
+                    left = mid+1;
+                }
+            } else if(arr[mid]==arr[right]){
+                if(arr[mid]!=arr[left]){
+                    right=mid-1;
+                } else{
+                    return -1;
+                }
+            }
+        }
+        return -1;
+    }
+    
+    
     public static void main(String[] args) {
-
+        int[] a = {3,3,5,2,2,3};
+        System.out.println(search(a, 0, 5, 5));
     }
 
 }

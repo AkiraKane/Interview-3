@@ -5,13 +5,18 @@
  */
 package question2_17;
 
+import CtCILibrary.LinkedListNode;
+
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static LinkedListNode insertionSort(LinkedListNode head){
+        
+        
+        return null;
+    }
+    
+
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

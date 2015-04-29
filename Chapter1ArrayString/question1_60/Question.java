@@ -12,11 +12,16 @@ package question1_60;
 
 public class Question {
 
-    /**
-     * @param args
-     */
+    
+    public static int candy(int[] ratings){
+        
+        
+        
+        return -1;
+    }
+    
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

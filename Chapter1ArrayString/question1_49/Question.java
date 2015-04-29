@@ -3,8 +3,8 @@
     The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
     (you may want to display this pattern in a fixed font for better legibility)
     P   A   H   N
-    A   P    L   S I I G
-    Y   I     R
+    A   P   L   S I I G
+    Y   I   R
     And then read line by line: "PAHNAPLSIIGYIR"
     Write the code that will take a string and make this conversion given a number of rows:
     string convert(string text, int nRows);
@@ -16,11 +16,15 @@ package question1_49;
 
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static String zigZagConvert(String input, int row){
+        
+        
+        
+        return "";
+    }
+    
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

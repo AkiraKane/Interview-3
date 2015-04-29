@@ -7,11 +7,14 @@ package question1_28;
 
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static String findLongestIncreasingSubstring(){
+        
+        
+        
+        return "";
+    }
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

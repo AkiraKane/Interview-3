@@ -15,14 +15,36 @@
  */
 package question3_13;
 
+import java.util.Stack;
+
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+    public static String simplifyPath(String path) {
+        String[] parts = path.split("\\/");
+        Stack<String> stack = new Stack<String>();
+        
+        for(String part : parts){
+            if(part.equals(".")){
+                continue;
+            } else if(part.equals("..")){
+                if(!stack.isEmpty()){
+                    stack.pop();
+                }
+            } else {
+                stack.push(part);
+            }
+        }
+        
+        String result="";
+        while(!stack.isEmpty()){
+            result = "/" + stack.pop()+result;
+        }
+        return result.substring(1);
     }
-
+    
+    
+    public static void main(String[] args) {
+        System.out.println(simplifyPath("/home/"));
+        System.out.println(simplifyPath("/a/./b/../../c/"));
+    }
 }

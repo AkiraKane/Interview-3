@@ -1,5 +1,5 @@
 /**
-    1.24    Longest Substring with at most two distinct characters.                                         
+    1.24    Longest Substring with at most two distinct characters.
     Given a string S, find the length of the longest substring T that contains at most two distinct characters.
     For example,
     Given S = “eceba”,

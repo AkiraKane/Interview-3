@@ -6,13 +6,25 @@
 
 package question1_36;
 
+import java.util.List;
+
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static List<Integer> intersection(int[] A, int[] B){
+        
+        
+        
+        return null;
+    }
+    
+    
+    public static List<Integer> union(int[] A, int[] B){
+        
+        
+        return null;
+    }
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

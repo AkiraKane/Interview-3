@@ -10,12 +10,15 @@ package question1_34;
 
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public static boolean isSubArray(int[] A, int[] B){
+        
+        
+        return false;
+    }
 
+    public static void main(String[] args) {
+
+        
     }
 
 }

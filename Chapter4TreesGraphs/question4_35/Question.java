@@ -9,13 +9,20 @@
 
 package question4_35;
 
+import CtCILibrary.UndirectedGraphNode;
+
 public class Question {
 
-    /**
-     * @param args
-     */
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode graph){
+        
+        
+        
+        
+        return null;
+    }
+    
+
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 
