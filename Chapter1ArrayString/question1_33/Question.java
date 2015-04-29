@@ -10,8 +10,15 @@ package question1_33;
 public class Question {
 
     public static boolean subArraySumK(int[] array, int k){
-        
-        
+        for(int i=0; i<array.length; i++){
+            for(int j=i; i<array.length; j++){
+                int sum = 0;
+                sum+=array[j];
+                if(sum==k){
+                    return true;
+                }
+            }
+        }
         
         return false;
     }
