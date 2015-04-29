@@ -20,21 +20,80 @@
  */
 package question1_54;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Question {
     
-    // Time: O(), Space: O()
-    public static List<String> convert(String[] words){
+    public static List<String> convert(String[] words, int L){
+        List<List<String>> store = new ArrayList<List<String>>();
+        int lineLength = 0;
+        List<String> currentLine = new ArrayList<String>();
+        currentLine.add(words[0]);
+        lineLength+=words[0].length();
         
+        for(int i=1; i<words.length; i++){
+            String word = words[i];
+            if(word.equals("justification.")){
+                // this word must be in a new line
+                store.add(currentLine);
+                currentLine = new ArrayList<String>();
+                currentLine.add(word);
+                store.add(currentLine);
+                break;
+            } else {
+                if((lineLength + word.length()+1) > L) {
+                    // cannot add this word to the line
+                    store.add(currentLine);
+                    currentLine = new ArrayList<String>();
+                    currentLine.add(word);
+                    lineLength = word.length();
+                } else {
+                    // can add this word to the line
+                    currentLine.add(words[i]);
+                    lineLength += (word.length()+1);
+                }
+            }
+        }
         
-        return null;
+        List<String> result = new ArrayList<String>();
+        for(List<String> line : store){
+            int lengthOfChars = 0;
+            for(int i=0; i<line.size(); i++){
+                lengthOfChars+=line.get(i).length();
+            }
+            StringBuilder sb = new StringBuilder();
+            int spaceNum = L-lengthOfChars;
+            int basicSpaceNum = 0;
+            int leftSpaceNum = 0;
+            if(line.size()>1){
+                basicSpaceNum = spaceNum/(line.size()-1);
+                leftSpaceNum = spaceNum%(line.size()-1);
+            }
+
+            for(int i=0; i<line.size(); i++){
+                if(i!=0){
+                    // add some spaces
+                    int extraSpaceNum = (leftSpaceNum>0) ? 1: 0;
+                    leftSpaceNum--;
+                    for(int j=0; j<basicSpaceNum+extraSpaceNum; j++){
+                        sb.append(" ");
+                    }
+                }
+                sb.append(line.get(i));
+            }
+            result.add(sb.toString());
+        }
+        
+        return result;
     }
-    
-    
     
     public static void main(String[] args) {
-
+        String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
+        int L = 16;
+        List<String> result = convert(words, L);
+        for(String line : result){
+            System.out.println(line);
+        }
     }
-
 }
