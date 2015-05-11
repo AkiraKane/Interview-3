@@ -12,14 +12,48 @@
 
 package question1_29;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public static List<Integer> getIndices(String input, String[] words){
+        List<Integer> result = new ArrayList<Integer>();
 
+        HashSet<String> set = new HashSet<String>();
+        for(String word : words){
+            set.add(word);
+        }
+        int wordLength = words[0].length();
+        int totalLength = wordLength * words.length;
+        for(int i=0; i<=(input.length()-totalLength); i++){
+            if(isConcatenation(input.substring(i, i+totalLength), wordLength, (HashSet<String>)set.clone())){
+                result.add(i);
+            }
+        }
+        return result;
     }
 
+    public static boolean isConcatenation(String input, int wordLength, HashSet<String> set){
+        for(int i=0; i<=(input.length()-wordLength); i=(i+3)){
+            String word = input.substring(i, i+wordLength);
+            if(set.contains(word)){
+                set.remove(word);
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public static void main(String[] args) {
+        String input = "barfoothefoobarman";
+        String[] words = {"foo", "bar"};
+        List<Integer> result = getIndices(input, words);
+        for(Integer index : result){
+            System.out.println(index);
+        }
+    }
 }

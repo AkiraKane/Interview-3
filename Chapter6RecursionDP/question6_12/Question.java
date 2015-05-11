@@ -9,13 +9,26 @@
  */
 package question6_12;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static List<String> retore(String input){
+        List<String> result = new ArrayList<String>();
+        List<String> ip = new ArrayList<String>();
+        int limit = 4;
+        cutIp(input, 0, limit, ip, result);
+        return result;
+    }
+
+    private static void cutIp(String input, int step, int limit, List<String> ip, List<String> result){
+
+
+    }
+
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+
 
     }
 

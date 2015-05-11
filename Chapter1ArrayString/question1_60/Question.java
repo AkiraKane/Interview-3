@@ -14,12 +14,31 @@ public class Question {
 
     
     public static int candy(int[] ratings){
+        int n = ratings.length;
+        int[] increment = new int[n];
         
+        for(int i=1,inc=1; i<n; i++) {
+            if(ratings[i]>ratings[i+1]){
+                increment[i] = Math.max(inc++, increment[i]);
+            } else {
+                inc=1;
+            }
+        }
         
+        for(int i=n-2,inc=1; i>=0; i--){
+            if(ratings[i]>ratings[i+1]){
+                increment[i] = Math.max(inc++, increment[i]);
+            } else {
+                inc = 1;
+            }
+        }
         
-        return -1;
+        int accumulate = 0;
+        for(int i=0; i<n; i++){
+            accumulate+=increment[i];
+        }
+        return accumulate;
     }
-    
     
     public static void main(String[] args) {
 

@@ -6,8 +6,31 @@
  */
 package question2_15;
 
+import CtCILibrary.LinkedListNode;
+
 public class Question {
 
+    public static void insert(LinkedListNode node, int val){
+        boolean toInsert = false;
+        if(node.data <=node.next.data){
+            if(node.data<=val && node.next.data>=val){
+                toInsert = true;
+            }
+        } else {
+            if(val>=node.data){
+                toInsert = true;
+            }
+        }
+        if(toInsert){
+            LinkedListNode insertNode = new LinkedListNode();
+            insertNode.data = val;
+            insertNode.next = node.next;
+            node.next = insertNode;
+            return;
+        }
+        insert(node.next, val);
+    }
+    
 
     public static void main(String[] args) {
 

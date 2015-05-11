@@ -13,14 +13,67 @@
 
 package question1_39;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public static List<int[]> insertInterval(List<int[]> intervals, int[] newInterval){
+        List<int[]> result = new ArrayList<int[]>();
+        int leftBound = 0;
+        int rightBound = 0;
 
+        int i;
+        for(i=0; i<intervals.size(); i++){
+            int[] interval = intervals.get(i);
+            if(interval[1]<newInterval[0]){
+                // no merge
+                result.add(interval);
+            } else {
+                leftBound = Math.min(interval[0], newInterval[0]);
+                break;
+            }
+        }
+        if(i==intervals.size()){
+            result.add(newInterval);
+        } else {
+            int j;
+            for(j=i; j<intervals.size(); j++){
+                int[] interval = intervals.get(j);
+                if(interval[0]>newInterval[1]){
+                    rightBound=Math.max(intervals.get(j-1)[1], newInterval[1]);
+                    break;
+                }
+            }
+
+            if(j<intervals.size()){
+                result.add(new int[]{leftBound, rightBound});
+                for(int k=j; k<intervals.size(); k++){
+                    result.add(intervals.get(k));
+                }
+            } else {
+                rightBound =Math.max(intervals.get(intervals.size()-1)[1], newInterval[1]);
+                result.add(new int[]{leftBound, rightBound});
+            }
+        }
+        return result;
     }
 
+
+
+    public static void main(String[] args) {
+        List<int[]> intervals = new ArrayList<int[]>();
+        intervals.add(new int[]{1,2});
+        intervals.add(new int[]{3,5});
+        intervals.add(new int[]{6,7});
+        intervals.add(new int[]{8,10});
+        intervals.add(new int[]{12,16});
+
+        int[] newInterval = new int[]{4,9};
+        List<int[]> result = insertInterval(intervals, newInterval);
+
+        for(int[] pair : result){
+            System.out.println(pair[0]+","+pair[1]);
+        }
+    }
 }

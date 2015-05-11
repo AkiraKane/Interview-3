@@ -12,12 +12,26 @@ package question1_42;
 
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public static int distinct(String S, String T){
+        if(T.equals("")){
+            return 1;
+        }
+        char c = T.charAt(0);
+        // find c in S
+        for(int i=0; i<S.length(); i++){
+            if(S.charAt(i)==c){
+                // choose to include this character or not
+                return distinct(S.substring(i+1), T.substring(1)) + distinct(S.substring(i+1), T);
+            }
+        }
+        return 0;
+    }
 
+
+    public static void main(String[] args) {
+        String S = "rabbbit";
+        String T = "rabbit";
+        System.out.println(distinct(S, T));
     }
 
 }

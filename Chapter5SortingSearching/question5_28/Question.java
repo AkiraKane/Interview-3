@@ -10,11 +10,39 @@ package question5_28;
 
 public class Question {
 
-    /**
-     * @param args
-     */
+    public static int median(int[] A, int[] B){
+        int target = (A.length+B.length)/2;
+        int index=0;
+        int indexA = 0;
+        int indexB = 0;
+        while(indexA<A.length && indexB<B.length){
+            int val;
+            if(A[indexA]<=B[indexB]){
+                val = A[indexA++];
+            } else {
+                val = B[indexB++];
+            }
+            if(index==target){
+                return val;
+            }
+            index++;
+        }
+        if(indexA<A.length){
+            while(index<target){
+                indexA++;
+                index++;
+            }
+            return A[indexA];
+        }
+        while(index<target){
+            indexB++;
+            index++;
+        }
+        return B[indexB];
+    }
+    
+    
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
 
     }
 

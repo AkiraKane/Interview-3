@@ -6,15 +6,25 @@
  */
 package question5_29;
 
-public class Question {
+import java.util.PriorityQueue;
 
-    /**
-     * @param args
-     */
+public class Question {
+    
+    public static void sort(int[] array, int k){
+        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
+        for(int i=0;i<=k;i++){
+            minHeap.add(array[i]);
+        }
+        for(int i=0; i<array.length; i++){
+            array[i] = minHeap.poll();
+            if((i+k+1)<array.length){
+                minHeap.add(array[i+k+1]);
+            }
+        }
+    }
+    
     public static void main(String[] args) {
 
-        
-        
     }
 
 }

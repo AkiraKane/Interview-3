@@ -8,14 +8,67 @@
 
 package question4_29;
 
+import CtCILibrary.TreeNode;
+
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public static void printLeftEdge(TreeNode root){
+        if(root==null){
+            return;
+        }
+        if(root.left==null && root.right==null){
+            return;
+        }
 
+        System.out.println(root.data);
+        if(root.left!=null){
+            printLeftEdge(root.left);
+        } else if(root.right!=null){
+            printLeftEdge(root.right);
+        }
     }
 
+    public static void printBottomEdge(TreeNode root){
+        if(root==null){
+            return;
+        }
+        if(root.left==null && root.right==null){
+            System.out.println(root.data);
+        } else {
+            if(root.left!=null){
+                printBottomEdge(root.left);
+            }
+            if(root.right!=null){
+                printBottomEdge(root.right);
+            }
+        }
+    }
+
+    public static void printRightEdge(TreeNode root){
+        if(root==null){
+            return;
+        }
+        if(root.left==null && root.right==null){
+            return;
+        }
+        if(root.right!=null){
+            printRightEdge(root.right);
+        } else if(root.left!=null){
+            printRightEdge(root.left);
+        }
+        System.out.println(root.data);
+    }
+
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(0);
+        root.left = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.left.left = new TreeNode(3);
+        root.left.right = new TreeNode(4);
+
+        printLeftEdge(root);
+        printBottomEdge(root);
+        printRightEdge(root);
+    }
 }

@@ -18,12 +18,72 @@ package question5_19;
 
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public static void sortTwoPass(int[] array){
+        int numZero = 0;
+        int numOne = 0;
+        int numTwo = 0;
+        
+        for(int i=0; i<array.length; i++){
+            if(array[i]==0){
+                numZero++;
+            } else if(array[i]==1){
+                numOne++;
+            } else if(array[i]==2){
+                numTwo++;
+            }
+        }
+        int index = 0;
+        while(numZero>0){
+            array[index++] = 0;
+            numZero--;
+        }
+        while(numOne>0){
+            array[index++] = 1;
+            numOne--;
+        }
+        while(numTwo>0){
+            array[index++] = 2;
+            numTwo--;
+        }
+        
+        for(int i=0; i<array.length; i++){
+            System.out.print(array[i]+" ");
+        }
+    }
+    
+    public static void sortOnePass(int[] array){
+        // elements lefter than indexZeo are 0
+        int indexZero = 0;
+        
+        // elements righter than indexTwo are 2
+        int indexTwo = array.length-1;
+        
+        int i=0;
+        while(i<=indexTwo) {
+            if(array[i]==0){
+                // swap i,left
+                array[i]=array[indexZero];
+                array[indexZero++]=0;
+                if(i<indexZero){
+                    i=indexZero;
+                }
+            } else if(array[i]==2){
+                array[i]=array[indexTwo];
+                array[indexTwo--]=2;
+            } else if(array[i]==1){
+                i++;
+            }
+        }
+        
+        for(int j=0; j<array.length; j++){
+            System.out.print(array[j]+" ");
+        }
+    }
 
+    
+    public static void main(String[] args) {
+        int[] array = {1,2,0,1,1,2};
+        sortOnePass(array);
     }
 
 }

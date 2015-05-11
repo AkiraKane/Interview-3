@@ -15,12 +15,23 @@ package question5_11;
 
 public class Question {
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public static int insert(int[] array, int target){
 
+        int position = -1;
+        int i;
+        for(i=0; i<=array.length; i++){
+            if(array[i]>=target){
+                break;
+            }
+        }
+        position=i;
+        return position;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1,3,5,6};
+        int target = 5;
+        System.out.print(insert(array, target));
     }
 
 }

@@ -8,14 +8,50 @@
 
 package question5_27;
 
-public class Question {
+import java.util.Arrays;
+import java.util.Comparator;
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+class MyComparator implements Comparator<String> {
+    public int compare(String a, String b){
+        int length = Math.min(a.length(), b.length());
+        for(int i=0; i<length; i++){
+            if(a.charAt(i)>b.charAt(i)){
+                return 1;
+            } else if(a.charAt(i)<b.charAt(i)){
+                return -1;
+            }
+        }
+        if(a.length()>length){
+            for(int i=length; i<a.length(); i++){
+                if(a.charAt(i)>a.charAt(0)){
+                    return 1;
+                } else if(a.charAt(i)<a.charAt(0)){
+                    return -1;
+                }
+            }
+            return 0;
+        } else if(b.length()>length){
+            for(int i=length; i<b.length(); i++){
+                if(b.charAt(i)>b.charAt(0)){
+                    return -1;
+                } else if(b.charAt(i)<b.charAt(0)){
+                    return 1;
+                }
+            }
+            return 0;
+        }
+        return 0;
     }
+}
 
+public class Question {
+    public static void main(String[] args) {
+        String[] array = {"91", "3", "30", "34", "5", "9"};
+        Arrays.sort(array, new MyComparator());
+        StringBuilder sb = new StringBuilder();
+        for(String ele : array){
+            sb.append(ele);
+        }
+        System.out.println(sb.toString());
+    }
 }
